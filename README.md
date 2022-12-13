@@ -1,4 +1,4 @@
-I have completed the Master of Science in Data Science (MSDS) program at the University of Wisconsin. This is my capstone project - code and artifacts.
+I have completed the Master of Science in Data Science (MSDS) program at the University of Wisconsin. This is my capstone project - code, paper, and artifacts.
 
 Read the full paper here (CTRL-click or right-click to open in new tab):
 
