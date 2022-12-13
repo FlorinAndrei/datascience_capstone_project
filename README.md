@@ -4,4 +4,4 @@ Read the full paper here: [Semantic Segmentation for Medical Ultrasound Imaging]
 
 Video of my models looking for benign / malignant lesions on ultrasound images:
 
-[![Watch the video](https://img.youtube.com/vi/en4aTGsbp3U/default.jpg)](https://youtu.be/en4aTGsbp3U)
+[![Watch the video](https://img.youtube.com/vi/en4aTGsbp3U/maxresdefault.jpg)](https://youtu.be/en4aTGsbp3U)
