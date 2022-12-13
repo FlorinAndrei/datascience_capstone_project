@@ -28,7 +28,7 @@ Both models were pre-trained on ImageNet.
 
 ## Hyperparameter Optimization
 
-This was the most time-consuming part of the project. Training a single model on an RTX 3090 takes about 1 hour. I had a hyperparameter optimization loop, with Optuna, running a search in hyperparameter space for the best performance.
+This was the most time-consuming part of the project. Training a single model on an RTX 3090 GPU takes about 1 hour. I had a hyperparameter optimization loop, with Optuna, running a search in hyperparameter space for the best performance.
 
 The performance metric that was optimized is intersection-over-union (IoU).
 
