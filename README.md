@@ -14,9 +14,11 @@ Video of my models looking for benign / malignant lesions on ultrasound images (
 
 Vision models need to be trained on large datasets. Ultrasound imaging datasets are small and hard to find. The project had access to four small fully labeled datasets, and one large dataset that had class labels (benign, malignant) but no mask labels.
 
-I wrote dataloader functions to take images from all four fully labeled datasets, and present them to the models like a single, larger, uniform dataset.
+I wrote dataloader functions to take images from all four fully labeled datasets, and present them to the models like a single, larger, uniform dataset of nearly 1800 images total.
 
 Typical image augmentations were applied to the datasets, with some adjustments for this specific domain - see the paper for details.
+
+The video you see above contains predictions on the large, partially labeled dataset, which had nearly 200 video sequences with a total of about 25k image frames.
 
 ## Models
 
