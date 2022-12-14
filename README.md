@@ -47,7 +47,7 @@ When I dropped the classes and simply tried to find lesions regardless of their 
 
 - SegFormer: 89%
 
-The numbers are small when compared to state-of-the-art models segmenting city street images, etc. But ultrasound images are noisy, the objects don't always have clear borders, and the quality of the labels (manually drawn masks) is not always very good.
+Some of the numbers are small when compared to state-of-the-art models segmenting city street images, etc. But ultrasound images are noisy, the objects don't always have clear borders, and the quality of the labels (manually drawn masks) is not always very good.
 
 All things considered, I think SegFormer did very well.
 
