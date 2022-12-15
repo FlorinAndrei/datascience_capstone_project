@@ -1,4 +1,4 @@
-I have completed the Master of Science in Data Science (MSDS) program at the University of Wisconsin - La Crosse. This is my capstone project - code, paper, and artifacts.
+I have completed the Master of Science in Data Science (MSDS) program at the University of Wisconsin. This is my capstone project - code, paper, and artifacts.
 
 Read the full paper here (CTRL-click or right-click to open in new tab):
 
@@ -6,7 +6,7 @@ Read the full paper here (CTRL-click or right-click to open in new tab):
 
 Video of my models looking for benign / malignant lesions on breast ultrasound images (CTRL-click or right-click to open in new tab):
 
-[![Semantic Segmentation](pred-good.png)](https://youtu.be/en4aTGsbp3U)
+[![Semantic Segmentation](pred-good-yt.png)](https://youtu.be/en4aTGsbp3U)
 
 # Overview
 
