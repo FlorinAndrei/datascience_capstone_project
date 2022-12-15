@@ -44,6 +44,15 @@ The performance metric that was optimized is intersection-over-union (IoU).
 
 For more details see the paper, but basically the learning rate had by far the biggest impact on model performance. The number of freeze epochs mattered somewhat for U-Net. The warmup ratio had a mild impact on the SegFormer. The other parameters I've explored were much less important.
 
+## Code
+
+These are the main notebooks with the optimization code for the main models:
+
+- [unet_fine_tune.ipynb](unet_fine_tune.ipynb)
+- [segformer_fine_tune.ipynb](segformer_fine_tune.ipynb)
+
+The other notebooks fine-tune the single-class model, extract performance numbers, and build the video artifact. The sole .py file is a library of functions for the dataloaders. I've included the Optuna DBs with the complete optimization histories.
+
 # Results
 
 When doing semantic segmentation, which involved segmenting the image and also assigning class values to the predicted mask pixels, the mean IoU performance across both classes (benign and malignant) on the validation dataset was:
