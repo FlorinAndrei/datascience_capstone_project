@@ -1,12 +1,20 @@
-I have completed the Master of Science in Data Science (MSDS) program at the University of Wisconsin. This is my capstone project - code, paper, and artifacts.
+I have completed the Master of Science in Data Science (MSDS) program at the University of Wisconsin - La Crosse. This is my capstone project - code, paper, and artifacts.
 
 Read the full paper here (CTRL-click or right-click to open in new tab):
 
 [Semantic Segmentation for Medical Ultrasound Imaging](Capstone%20Paper%20-%20Semantic%20Segmentation%20for%20Medical%20Ultrasound%20Imaging.pdf)
 
-Video of my models looking for benign / malignant lesions on ultrasound images (CTRL-click or right-click to open in new tab):
+Video of my models looking for benign / malignant lesions on breast ultrasound images (CTRL-click or right-click to open in new tab):
 
 [![Semantic Segmentation](pred-good.png)](https://youtu.be/en4aTGsbp3U)
+
+# Overview
+
+This work was done within the BUS Project at the University of Wisconsin, led by Dr. Jeffrey Baggett. Together with the Mayo Clinic, represented by Dr. Richard Ellis, they are working on a feasibility study aiming to develop state-of-the-art breast ultrasound lesion interpretation support software for radiologists. In plain words, they research deep learning techniques to improve breast cancer diagnostic and patient outcomes. See the paper for details.
+
+Within the BUS Project, this work (my capstone project) has aimed to create deep learning models that can identify lesions (benign or malignant) in breast ultrasound images, and highlight their area and contour on the images. Some models classify the lesions based on their nature (benign or malignant) and indicate the lesion class via color codes.
+
+This, in a nutshell, is image segmentation applied to ultrasound imaging.
 
 # Tech Details
 
@@ -14,7 +22,7 @@ Video of my models looking for benign / malignant lesions on ultrasound images (
 
 Vision models need to be trained on large datasets. Ultrasound imaging datasets are small and hard to find. The project had access to four small fully labeled datasets, and one large dataset that had class labels (benign, malignant) but no mask labels.
 
-I wrote dataloader functions to take images from all four fully labeled datasets, and present them to the models like a single, larger, uniform dataset of nearly 1800 images total.
+I wrote dataloader functions which take images from all four fully labeled datasets, and present them to the models as a single, larger, uniform dataset of nearly 1800 images total.
 
 Typical image augmentations were applied to the datasets, with some adjustments for this specific domain - see the paper for details.
 
@@ -22,9 +30,9 @@ The video you see above contains predictions on the large, partially labeled dat
 
 ## Models
 
-Just to be on the safe side, I've trained an older architecture, U-Net with a ResNet34 backbone, which was known to work well on ultrasound datasets.
+As a safe, known-good approach, I've trained an older architecture, U-Net with a ResNet34 backbone, which was known to work well on ultrasound datasets.
 
-To try and get the best performance possible, I've also trained a transformer model, the SegFormer.
+To try and get the best performance possible, I've also fine-tuned a transformer model, the SegFormer.
 
 Both models were pre-trained on ImageNet.
 
@@ -34,7 +42,7 @@ This was the most time-consuming part of the project. Training a single model on
 
 The performance metric that was optimized is intersection-over-union (IoU).
 
-For more details see the paper, but basically the learning rate had by far the biggest impact on model performance. The number of freeze epochs mattered somewhat for U-Net. The warmup ratio had a mild impact on the SegFormer. The rest basically were irrelevant.
+For more details see the paper, but basically the learning rate had by far the biggest impact on model performance. The number of freeze epochs mattered somewhat for U-Net. The warmup ratio had a mild impact on the SegFormer. The other parameters I've explored were much less important.
 
 # Results
 
@@ -43,12 +51,12 @@ When doing semantic segmentation, which involved segmenting the image and also a
 - U-Net: 64.2%
 - SegFormer: 74.7%
 
-When I dropped the classes and simply tried to find lesions regardless of their class (benign and malignant together), the performance was:
+When I've dropped the classes and simply tried to find lesions regardless of their class (benign and malignant together as a single "class"), the IoU performance was:
 
 - SegFormer: 89%
 
-Some of the numbers are small when compared to state-of-the-art models segmenting city street images, etc. But ultrasound images are noisy, the objects don't always have clear borders, and the quality of the labels (manually drawn masks) is not always very good.
+Some of the IoU numbers are small when compared to state-of-the-art models segmenting city street images, etc. But ultrasound images are noisy, the objects don't always have clear borders, and the quality of the labels (manually drawn masks) is not always very good.
 
-All things considered, I think SegFormer did very well.
+All things considered, I think SegFormer did very well, especially in single class mode.
 
-Larger datasets with higher quality labels will certainly improve performance beyond the numbers shown here.
+Larger datasets with higher quality labels will certainly improve performance beyond the numbers shown here. There are further potential improvements that may be explored later.
