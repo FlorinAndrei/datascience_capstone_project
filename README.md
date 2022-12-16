@@ -53,7 +53,7 @@ These are the main notebooks with the optimization code for the main models:
 
 The other notebooks fine-tune the single-class model, extract performance numbers, and build the video artifact. The sole .py file is a library of functions for the dataloaders. I've included the Optuna DBs with the complete optimization histories.
 
-# Results
+# Main Results
 
 When doing semantic segmentation, which involved segmenting the image and also assigning class values to the predicted mask pixels, the mean IoU performance across both classes (benign and malignant) on the validation dataset was:
 
@@ -69,3 +69,5 @@ Some of the IoU numbers are small when compared to state-of-the-art models segme
 All things considered, I think SegFormer did very well, especially in single class mode.
 
 Larger datasets with higher quality labels will certainly improve performance beyond the numbers shown here. There are further potential improvements that may be explored later.
+
+Prediction consistency was evaluated on the partially labeled (video) dataset. In general, SegFormer outperformed U-Net by that metric, too - see the paper for details.
