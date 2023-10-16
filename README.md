@@ -18,6 +18,8 @@ Within the BUS Project, this work (my capstone project) has aimed to create deep
 
 This, in a nutshell, is image segmentation applied to ultrasound imaging.
 
+Model performance was on part with state-of-the-art segmentation models for ultrasound imaging.
+
 # Tech Details
 
 ## Datasets
